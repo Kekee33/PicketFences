@@ -1,1 +1,1 @@
-# PicketFences
+A web application initially for Realtors & Buyer (ultimately Sellers, Lenders, Attorney’s & Inspector’s)  that will allow necessary correspondence between all parties. There would be a sign in page for each.  Buyer's would be able to schedule appointments to view homes. App will allow Buyer & Realtor to send messages and hopefully have shared access to a calendar to keep up with important dates.
