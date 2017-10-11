@@ -17,7 +17,7 @@ const About = () =>
         </Col>
       </Row>
       <Row>
-        <Col size="md-12">
+        <Col size="md-6">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             aliquet diam tortor, id consequat mauris ullamcorper eu. Orci varius
