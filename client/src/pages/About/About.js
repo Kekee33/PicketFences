@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
-import DeleteBtn from "../../components/DeleteBtn";
-import API from "../../utils/API";
-import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import React from "react";
+import Fence from "../../components/Fence";
+import Container from "../../components/Container";
+import Row from "../../components/Row";
+import Col from "../../components/Col";
 
 const About = () =>
   <div>
-    <Fence backgroundImage="">
+    <Fence backgroundImage="https://tse2.mm.bing.net/th?id=OIP.0AAWUoLCxdzKnhT36z6JNAHICI&pid=15.1&P=0&w=547&h=164">
       <h1>Picket Fences</h1>
       <h2>Helping you find a house and make it a HOME!</h2>
     </Fence>
@@ -16,6 +14,26 @@ const About = () =>
       <Row>
         <Col size="md-12">
           <h1>Welcome To Picket Fences!!</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            aliquet diam tortor, id consequat mauris ullamcorper eu. Orci varius
+            natoque penatibus et magnis dis parturient montes, nascetur
+            ridiculus mus. Pellentesque et dui id justo finibus sollicitudin at
+            et metus. Ut feugiat tellus nec metus commodo, sed suscipit nisi
+            gravida. Duis eget vestibulum quam, ut porttitor sem. Donec sagittis
+            mi sollicitudin turpis semper, et interdum risus lobortis.
+            Vestibulum suscipit nunc non egestas tristique. Proin hendrerit
+            efficitur malesuada. Mauris lorem urna, sodales accumsan quam non,
+            tristique tempor erat. Nullam non sem facilisis, tempus tortor sit
+            amet, volutpat nisl. Ut et turpis non nunc maximus mollis a vitae
+            tortor. Pellentesque mattis risus ac quam laoreet cursus. Praesent
+            suscipit orci neque, vestibulum tincidunt augue tincidunt non. Duis
+            consequat mattis tortor vitae mattis.
+            </p>
         </Col>
       </Row>
     </Container>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props =>
@@ -29,4 +28,4 @@ const Navbar = props =>
 
 
 
-export default Nav;
+export default Navbar;
