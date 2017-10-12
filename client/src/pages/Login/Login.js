@@ -1,58 +1,64 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./Login.css";
 
-/* App.jsx */
-class Login extends React.Component { 
-    render() {
-      return (
-        <div className='form'>
-          <div className='form_logo'>
-            Lo<span>g</span>o
-          </div>
-          <div className='form_title'>
-            Log<span>I</span>n
-          </div>
-          <form className='form_items'>
-            <div className='form_inputs'>
-              <input 
-                type='text'
-                required
-                />
-              <label>username or email</label>
-            </div>
-            <div className='form_inputs'>
-              <input
-                type='password'
-                required
-                />
-              <label>password</label>
-            </div>
-            <button className='form_button'>Log In</button>
-          </form>
-          <div className='form_other'>
-            <a href='#'>forgot password?</a>
-            <a href='#'>Join Now</a>
-          </div>
-        </div>
-      );
-    }
-    
+class Login extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: ""
+    };
   }
-  
-  /* main.js */
-  class Main extends React.Component{
-    render(){
-      return (
-        <div>
-          <Login />
-        </div>
-      );
-    }
-  };
-  
-  ReactDOM.render(
-    <Main />,
-    document.querySelector('#root')
-  );
-  
+
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className="Login">
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <Button
+            block
+            bsSize="large"
+            disabled={!this.validateForm()}
+            type="submit"
+          >
+            Login
+          </Button>
+        </form>
+      </div>
+    );
+  }
+}
+
 export default Login;

@@ -6,9 +6,8 @@ import Col from "../../components/Col";
 
 const About = () =>
   <div>
-    <Fence backgroundImage="https://tse2.mm.bing.net/th?id=OIP.0AAWUoLCxdzKnhT36z6JNAHICI&pid=15.1&P=0&w=547&h=164">
-      <h1>Picket Fences</h1>
-      <h2>Helping you find a house and make it a HOME!</h2>
+    <Fence backgroundImage="https://www.todayshomeowner.com/wp-content/uploads/2007/08/fences-surrounding-your-surroundings-1.jpg">
+      <h1>Picket Fences</h1>      
     </Fence>
     <Container style={{ marginTop: 30 }}>
       <Row>
