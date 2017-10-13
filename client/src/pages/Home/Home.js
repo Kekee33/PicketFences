@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./Home.css";
+import Fence from "../../components/Fence/Fence";
+
 
 class Home extends Component {
   render() {
     return (
-      <div className="Home">
-        <div className="lander">
+      <div className="Home">        
+        <div className="lander">          
           <h1>Welcome to Picket Fences</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
              aliquet diam tortor, id consequat mauris ullamcorper eu. Orci varius
