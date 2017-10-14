@@ -3,7 +3,7 @@ import "./Fence.css";
 
 const Fence = props =>
 <div
-  className="fence text-center"
+  className="fence"
   style={{ backgroundImage: `url(${props.backgroundImage})` }}
 >
   {props.children}

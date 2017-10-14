@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import LoaderButton from "../components/LoaderButton";
+import LoaderButton from "../../components/LoaderButton/LoaderButton";
 import "./Login.css";
 
 class Login extends Component {
@@ -48,7 +48,7 @@ class Login extends Component {
               type="password"
             />
           </FormGroup>
-          <LoaderButton
+        <LoaderButton
           block
           bsSize="large"
           disabled={!this.validateForm()}

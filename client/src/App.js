@@ -8,8 +8,8 @@ import RouteNavItem from "./components/RouteNavItem";
 class App extends Component {
   render() {
     return (
-      <div className="App container">
-        <Navbar fluid collapseOnSelect>
+      <div className="App container">        
+            <Navbar fluid collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
               <Link to="/">Home</Link>
@@ -18,8 +18,8 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
           <Nav pullRight>
-          <RouteNavItem href="/signup">Signup</RouteNavItem>
           <RouteNavItem href="/login">Login</RouteNavItem>
+          <RouteNavItem href="/signup">Signup</RouteNavItem>          
           </Nav>
         </Navbar.Collapse>
         </Navbar>
