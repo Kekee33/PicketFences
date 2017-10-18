@@ -1,12 +1,18 @@
 @media all and (min-width: 480px) {
     .Signup {
-      padding: 60px 0;
-      background-color: #9C9CA3;
+      padding: 60px 0;      
+      opacity: 0.8;
     }
   
     .Signup form {
       margin: 0 auto;
-      max-width: 320px;
+      max-width: 440px;
+      background-color: #0B0B0C;
+      opacity: 0.8;
+      font-size: 16px;
+      padding: 80px;
+      color: #FAF5F5;
+      font-family: 'Times New Roman', 'serif';
     }
   }
   

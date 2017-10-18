@@ -3,24 +3,6 @@ import "./Buyer.css";
 import Fence from "../../components/Fence/Fence";
 import Container from "../../components/Container/Container";
 
-const toDoForm = ({addTodo}) => {
-  let input;
-
-  return (
-    <div>
-      <input ref={node => {
-        input = node;
-      }} />
-
-      <button onClick={() => {
-        addTodo(input.value);
-        input.value = '';
-        }}>
-        +
-        </button>
-        </div>
-  );
-};
   
   
   

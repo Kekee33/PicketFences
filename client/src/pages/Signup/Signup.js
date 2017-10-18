@@ -55,33 +55,7 @@ import "./Signup.css";
     event.preventDefault();
 
     this.setState({ isLoading: true });
-  }
-
-  renderConfirmationForm() {
-    return (
-      <form onSubmit={this.handleConfirmationSubmit}>
-        <FormGroup controlId="confirmationCode" bsSize="large">
-          <ControlLabel>Confirmation Code</ControlLabel>
-          <FormControl
-            autoFocus
-            type="tel"
-            value={this.state.confirmationCode}
-            onChange={this.handleChange}
-          />
-          <HelpBlock>Please check your email for the code.</HelpBlock>
-        </FormGroup>
-        <LoaderButton
-          block
-          bsSize="large"
-          disabled={!this.validateConfirmationForm()}
-          type="submit"
-          isLoading={this.state.isLoading}
-          text="Verify"
-          loadingText="Verifying…"
-        />
-      </form>
-    );
-  }
+  } 
 
   renderForm() {
     return (
