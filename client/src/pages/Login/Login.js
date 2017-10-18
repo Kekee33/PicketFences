@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../../components/LoaderButton/LoaderButton";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -48,14 +49,14 @@ class Login extends Component {
               type="password"
             />
           </FormGroup>
-        <LoaderButton
+        <LoaderButton        
           block
           bsSize="large"
           disabled={!this.validateForm()}
           type="submit"
           isLoading={this.state.isLoading}
           text="Login"
-          loadingText="Logging in…"
+          loadingText="Logging in…"          
         />
         </form>
       </div>
