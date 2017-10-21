@@ -1,10 +1,8 @@
 import React from "react";
 import "./Home.css";
-//import Fence from "../../components/Fence/Fence";
 import Container from "../../components/Container/Container";
 import Row from "../../components/Row/Row";
 import Col from "../../components/Col/Col";
-import Fence from "../../components/Fence/Fence";
 
 
 

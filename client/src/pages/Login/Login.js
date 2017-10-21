@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import LoaderButton from "../../components/LoaderButton/LoaderButton";
+//import LoaderButton from "../../components/LoaderButton/LoaderButton";
 import "./Login.css";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class Login extends Component {
               type="password"
             />
           </FormGroup>
-        <LoaderButton        
+        {/*<LoaderButton        
           block
           bsSize="large"
           disabled={!this.validateForm()}
@@ -57,7 +57,9 @@ class Login extends Component {
           isLoading={this.state.isLoading}
           text="Login"
           loadingText="Logging in…"          
-        />
+        />*/}
+        <a className="btn btn-default btn-lg btn-block" href="/buyer" role="button">Login as Buyer</a>
+        <a className="btn btn-default btn-lg btn-block" href="/realtor" role="button">Login as Realtor</a>
         </form>
       </div>
     );

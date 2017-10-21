@@ -1,24 +1,27 @@
 import React, { Component } from "react";
 import "./Buyer.css";
-import Fence from "../../components/Fence/Fence";
-import Container from "../../components/Container/Container";
+import Todolist from "../../components/Todolist";
 
-  
-  
-  
-  
-  
-  
+
+class Buyer extends Component {
   render() {
-      return (
-        <div className="Home">                   
-            <h1>Buyer Landing Page</h1>
-            <Container style={{ minHeight: "80%" }}>
-            <h1 className="text-center">Search By Breed!</h1>
-          </Container>
-        </div>
-      );
-    }
+    return (
+      <div className="Buyer">        
+          <h1>Buyer Landing Page</h1>          
+          <Todolist />  
+      </div>
+    );
   }
-  
-  export default Buyer;
+}
+
+export default Buyer;
+
+
+
+
+
+
+
+
+
+
