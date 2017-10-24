@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Buyer.css";
-import Todolist from "../../components/Todolist";
+import TodoList from "../../components/TodoList";
+import Calendar from "../../components/Calendar";
 
 
 class Buyer extends Component {
@@ -8,7 +9,8 @@ class Buyer extends Component {
     return (
       <div className="Buyer">        
           <h1>Buyer Landing Page</h1>          
-          <Todolist />  
+          <TodoList />
+          <Calendar /> 
       </div>
     );
   }

@@ -5,6 +5,9 @@ import "./App.css";
 import Routes from "./Routes";
 import RouteNavItem from "./components/RouteNavItem";
 
+
+
+
 class App extends Component {
   render() {
     return (
@@ -23,6 +26,7 @@ class App extends Component {
           </Nav>
         </Navbar.Collapse>
         </Navbar>
+       
         <Routes />
       </div>
     );

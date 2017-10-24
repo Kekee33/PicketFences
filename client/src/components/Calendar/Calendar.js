@@ -1,275 +1,218 @@
-// import React from "react";
-// import ReactDOM from "react-dom";
-// import "./Calendar.css";
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import "./Calendar.css";
 
-// class Calendar extends Component {
-//     propTypes: {
-//       initialYear: React.PropTypes.number.isRequired,
-//       initialMonth: React.PropTypes.number.isRequired,
-//       initialCalendarView: React.PropTypes.array.isRequired
-//     }
-    
-//     getInitialState: function() {
-//       return {
-//         year: this.props.initialYear,
-//         month: this.props.initialMonth,
-//         events: [],
-//         selectedDate: "",
-//         calendarView: this.getDaysInMonth(this.props.initialYear, this.props.initialMonth)
-//       }
-//     },
-    
-//     setSelectedDate: function(date) {
-//       date = date.toString();
-      
-//       this.setState({selectedDate: date});
-      
-//       console.log(this.state.selectedDate);
-//     },
-    
-//     changeMonth: function(delta) {
-//       let currentMonth = this.state.month;
-//       let currentYear = this.state.year;
-      
-//       // if the current month is Dec and delta is 1, increase the year by 1 and change the current month to Jan
-//       if(currentMonth == 11 && delta == 1) {
-//         this.setState({
-//           year: this.state.year + 1,
-//           month: 0,
-//           calendarView: this.getDaysInMonth(this.state.year, this.state.month)
-//         });
-//       } 
-//       // Else if the current month is January and the delta is -1, decrement the year by 1 and change the current month to December
-//       else if (currentMonth == 0 && delta == -1) {
-//         this.setState({
-//           year: this.state.year - 1,
-//           month: 11,
-//           calendarView: this.getDaysInMonth(this.state.year, this.state.month)
-//         });
-//       }
-//       else {
-//         console.log("Before: ", delta, this.state.year, this.state.month);
-//         this.setState({
-//           year: this.state.year,
-//           month: this.state.month + delta,
-//           calendarView: this.getDaysInMonth(this.state.year, this.state.month)
-//         });
-//         console.log(this.state.calendarView);
-//         console.log(delta, this.state.year, this.state.month);
-//       }
-//     },
-    
-//     getDaysInMonth: function(year, month) {
-//       let daysInMonth = [],
-//           dayCounter = 1,
-//           complete = false;
-    
-//       // Starting from {dayCounter} and continuing until the month changes...
-//       while (complete == false) {
-//         let date = new Date();
-//         date.setMonth(month);
-//         date.setFullYear(year);
-//         date.setDate(dayCounter);
+class Calendar extends Component {
+    constructor() {
+      super();
+      this.state = {
+        days: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+        months: [
+          'January', 'February', 'March', 'April', 'May', 'June',
+          'July', 'August', 'September', 'October', 'November', 'December',
+        ],
+        weekDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        lastMonth: 11,
+        month: 0,
+        nextMonth: 1,
+        year: 0,
+        currentMonth: 0,
+        currentYear: 0,
+        calendar: [
+          { id: 'week-1', data: [0, 0, 0, 0, 0, 0, 0] },
+          { id: 'week-2', data: [0, 0, 0, 0, 0, 0, 0] },
+          { id: 'week-3', data: [0, 0, 0, 0, 0, 0, 0] },
+          { id: 'week-4', data: [0, 0, 0, 0, 0, 0, 0] },
+          { id: 'week-5', data: [0, 0, 0, 0, 0, 0, 0] },
+          { id: 'week-6', data: [0, 0, 0, 0, 0, 0, 0] },
+        ],
+        holidays: [],
+        holiday: '',
+      };
   
-//         let nextDate = new Date();
-//         nextDate.setMonth(month);
-//         nextDate.setFullYear(year);
-//         nextDate.setDate(dayCounter + 1);
+      this.previousCalendar = this.previousCalendar.bind(this);
+      this.nextCalendar = this.nextCalendar.bind(this);
+    }
   
-//         daysInMonth.push(date);
-//         dayCounter += 1;
+    componentWillMount() {
+      const now = new Date();
+      const currentMonth = now.getMonth();
+      const currentYear = now.getFullYear();
   
-//         // Finished adding dates if the current date iterative's month does not match the upcoming iterative's month
-//         // date.getMonth() == nextDate.getMonth ? complete = false : complete = true;
+      this.setState({
+        currentMonth,
+        currentYear,
+        month: currentMonth,
+        year: currentYear,
+      });
   
-//         if (date.getMonth() != nextDate.getMonth()) {
-//           complete = true;
-//         }
-//       }
-//       return daysInMonth;
-//     },
-    
-//     addEvent: function() {
-//       alert();
-//     },
-    
-//     render: function() {
-//       return (
-//         <div className="container">
-//           <div className="row">
-//             <Calendar calendarView={this.state.calendarView} year={this.state.year} month={this.state.month} changeMonth={this.changeMonth} setSelectedDate={this.setSelectedDate} />
-//             <Events addEvent={this.addEvent}/>
-//           </div>
-//         </div>
-//       );
-//     }
-//   }
+      this.setCalendar(new Date(currentYear, currentMonth, 1));
+    }
   
-//   function Calendar(props) {
-//     return (
-//       <div className="col-lg-6 calendar">
-//         <h1>My Calendar</h1>
-//         <table>
-//           <tr className="calendar--row calendar--weekdays">
-//             <th>Sun</th>
-//             <th>Mon</th>
-//             <th>Tue</th>
-//             <th>Wed</th>
-//             <th>Thur</th>
-//             <th>Fri</th>
-//             <th>Sat</th>
-//           </tr>
-//           {
-//             (function() {
-//               let calendarWeeks = [];
-//               let weekCounter = 0;
+    setMonth(date) {
+      const month = date.getMonth();
+      const lastMonth = month === 0 ? 11 : month - 1;
+      const nextMonth = month === 11 ? 0 : month + 1;
   
-//               // Map function stores arrays of "weeks" based on the month and year selected.
-//               // Used later to populate dates.
-//               props.calendarView.map(function(date) {
-//                 if (calendarWeeks.length == 0) {
-//                   // Add a weekArray to the calendarWeeks array
-//                   calendarWeeks.push(new Array);
-//                   // Increment weekCounter
-//                   weekCounter += 1;
-//                   // Add date to array
-//                   calendarWeeks[weekCounter-1].push(date);
-//                 }
-//                 // Else If calendarWeeks.length != 0 AND if the first day is Sunday
-//                 else if (calendarWeeks.length != 0 && date.getDay() == 0) {
-//                   // Add a weekArray to the calendarWeeks array
-//                   calendarWeeks.push(new Array);
-//                   // Increment weekCounter
-//                   weekCounter += 1;
-//                   // Add date to array
-//                   calendarWeeks[weekCounter-1].push(date);
-//                 }
-//                 // Else add the date to the current week array
-//                 else {
-//                   calendarWeeks[weekCounter-1].push(date);
-//                 }
-//               });
+      this.setState({
+        lastMonth,
+        month,
+        nextMonth,
+      });
   
-//               return calendarWeeks.map(function(weekDates) {
-//                 return <Week weekDates={weekDates} setSelectedDate={props.setSelectedDate} />
-//               })
-//             }())
-//           }
-//         </table>
-//         <div className="calendar--tools">
-//           <button onClick={function() {props.changeMonth(-1)}}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-//           <span> <Month month={props.month}/> <Year year={props.year} /> </span>
-//           <button onClick={function() {props.changeMonth(1)}}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
-//         </div>
-//       </div>
-//     );
-//   }
+      return { lastMonth, month, nextMonth };
+    }
   
-//   Calendar.propTypes = {
-//     year: React.PropTypes.number.isRequired,
-//     month: React.PropTypes.number.isRequired,
-//     calendarView: React.PropTypes.array.isRequired
-//   }
+    setCalendar(date) {
+      const { lastMonth, month, nextMonth } = this.setMonth(date);
+      const year = date.getFullYear();
+      const weekday = date.getDay();
+      const days = this.checkLeapYear(year);
+      let nextMonthDay = 0;
   
-//   // The Event component should take a day argument and return a list of events that have been stored for that day
-//   // Day event information is stored in the Application state in an array of Event objects event{date, [events]}
-//   function Events(props) {
-//     return (
-//       <div className="col-lg-6 event--viewer">
-//         <h1>Events</h1>
-//         <div className="event--viewer--item">
-//           <i className="fa fa-calendar" aria-hidden="true"></i>
-//           <p>This is an event item for the calendar</p>
-//           <i className="fa fa-times" aria-hidden="true"></i>
-//         </div>
-//         <div className="event--viewer--item">
-//           <i className="fa fa-calendar" aria-hidden="true"></i>
-//           <p>This is an event item for the calendar</p>
-//           <i className="fa fa-times" aria-hidden="true"></i>
-//         </div>
-//         <button>Add Event</button>
-//       </div>
-//     );
-//   }
+      const firstWeek = this.state.calendar[0].data.map((day, index) => {
+        let holiday = '';
+        if (index < weekday) {
+          const value = (days[lastMonth] - (weekday - index)) + 1;
+          return {
+            value,
+            class: 'day--soft',
+            month: lastMonth,
+          };
+        }
+        const value = (index - weekday) + 1;
+        return {
+          value: (index - weekday) + 1,
+          class: '',
+          month,
+        };
+      });
+      const secondWeek = this.state.calendar[0].data.map((day, index) => {
+        const value = firstWeek[6].value + index + 1;
+        return {
+          value,
+          class: '',
+          month,
+        };
+      });
+      const thirdWeek = this.state.calendar[0].data.map((day, index) => {
+        const value = secondWeek[6].value + index + 1;
+        return {
+          value,
+          class: '',
+          month,
+        };
+      });
+      const forthWeek = this.state.calendar[0].data.map((day, index) => {
+        const value = thirdWeek[6].value + index + 1;
+        return {
+          value,
+          class: '',
+          month,
+        };
+      });
+      const fifthWeek = this.state.calendar[0].data.map((day, index) => {
+        if (forthWeek[6].value + index + 1 > days[month]) {
+          nextMonthDay += 1;
+          return {
+            value: nextMonthDay,
+            class: 'day--soft',
+            month: nextMonth,
+          };
+        }
+        const value = forthWeek[6].value + index + 1;
+        return {
+          value,
+          class: '',
+          month,
+        };
+      });
+      const sixthWeek = this.state.calendar[0].data.map((day, index) => {
+        if (fifthWeek[6].value + index + 1 > days[month] || fifthWeek[6].value < 10) {
+          nextMonthDay += 1;
+          return {
+            value: nextMonthDay,
+            class: 'day--soft',
+            month: nextMonth,
+          };
+        }
   
-//   Events.propTypes = {}
+        const value = fifthWeek[6].value + index + 1;
+        return {
+          value,
+          class: '',
+          month,
+        };
+      });
   
-//   function Year(props) {
-//     return (
-//       <span> {props.year} </span>
-//     );
-//   }
+      this.setState({
+        month,
+        year,
+        calendar: [
+          { id: 'week-1', data: firstWeek },
+          { id: 'week-2', data: secondWeek },
+          { id: 'week-3', data: thirdWeek },
+          { id: 'week-4', data: forthWeek },
+          { id: 'week-5', data: fifthWeek },
+          { id: 'week-6', data: sixthWeek },
+        ],
+      });
+    }
   
-//   Year.propTypes = {
-//     year: React.PropTypes.number.isRequired,
-//   }
+    checkLeapYear(year) {
+      let days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      }
+      this.setState({
+        days,
+      });
+      return days;
+    }
   
-//   function Month(props) {
-//     // Used to render the month at the bottom of the calendar
-//     let monthList = new Array(12);
-//     monthList[0] = "Jan";
-//     monthList[1] = "Feb";
-//     monthList[2] = "Mar";
-//     monthList[3] = "Apr";
-//     monthList[4] = "May";
-//     monthList[5] = "Jun";
-//     monthList[6] = "Jul";
-//     monthList[7] = "Aug";
-//     monthList[8] = "Sept";
-//     monthList[9] = "Oct";
-//     monthList[10] = "Nov";
-//     monthList[11] = "Dec";
-    
-//     return (
-//       <span>{monthList[props.month]}</span>
-//     );
-//   }
+    previousCalendar() {
+      const month = this.state.month !== 0 ? this.state.month - 1 : 11;
+      const year = this.state.month !== 0 ? this.state.year : this.state.year - 1;
+      this.setCalendar(new Date(year, month, 1));
+    }
   
-//   Month.propTypes = {
-//     month: React.PropTypes.number.isRequired,
-//   }
+    nextCalendar() {
+      const month = this.state.month !== 11 ? this.state.month + 1 : 0;
+      const year = this.state.month !== 11 ? this.state.year : this.state.year + 1;
+      this.setCalendar(new Date(year, month, 1));
+    }
   
-//   function Week(props) {
-//     // Returns an array. Formatted array is used to pass in days in order that they would be passed to Day components.
-//     function getFormattedWeek() {
-//       let week = [];
-      
-//       for (let i=0; i<=6; i++) {
-//         let date = props.weekDates.filter(function(day) {
-//           return day.getDay() == i;
-//         });
-//         week.push(date[0]);
-//       }
-//       return week;
-//     }
-//     let week = getFormattedWeek();
-    
-//     return (
-//       <tr className="calendar--row calendar--week">
-//         {
-//           week.map(function(currentDay, dayIndexNum) {
-//             return <Day day={currentDay} setSelectedDate={props.setSelectedDate} />
-//           })
-//         }
-//       </tr>
-//     );
-//   }
+    render() {
+      console.log(this.state.calendar);
+      return (
+        <div className="calendar">
+          <div className="calendar-header">
+            <span className="button-container button-container--left">
+              <button onClick={this.previousCalendar} className="button-content button-content--left" />
+            </span>
+            <span className="calendar-header-date">{`${this.state.year} ${this.state.months[this.state.month]}`}</span>
+            <span className="button-container button-container--right">
+              <button onClick={this.nextCalendar} className="button-content button-content--right" />
+            </span>
+          </div>
+          <div className="week">
+            {this.state.weekDays.map(weekDay => <div key={weekDay} className="weekday">{weekDay}</div>)}
+          </div>
+          {this.state.calendar.map(week =>
+            <div key={week.id} className="week">
+              {week.data.map(day =>
+                <div
+                  key={`${day.month}${day.value}`}
+                  className={`day ${day.class}`}
+                >
+                  {day.value < 10 && day.value !== ' ' ? `0${day.value}` : day.value}
+                </div>,
+              )}
+            </div>,
+          )}
+        </div>
+      );
+    }
+  }
   
-//   Week.propTypes = {
-//     weekDates: React.PropTypes.array.isRequired
-//   }
-  
-//   function Day(props) {
-//     // For some reason, JS forgot that props.day is a Date object which caused method call problems. Re-establishing that here...
-//     let date = new Date(props.day);
-    
-//     return (
-//       <td onClick={function() {props.setSelectedDate(date)}}>{isNaN(date.getDate()) ? "" : date.getDate()}</td>
-//     );
-//   }
-  
-//   Day.propTypes = {
-//     day: React.PropTypes.number.isRequired
-//   }
-  
-//   ReactDOM.render(<Calendar initialYear={2017} initialMonth={6} />, document.getElementById("calendar"));
+  export default Calendar;

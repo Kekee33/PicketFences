@@ -1,101 +1,39 @@
-
-
-form {
-  display: inline;
+.todoListMain .header input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #FFF;
+  width: 165px;
 }
-
-button {
-  margin: 3px;
+.todoListMain .header button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  margin-right: 0px;
+  background-color: #0066FF;
+  color: #FFF;
+  border: 2px solid #0066FF;
+}
+.todoListMain .header button:hover {
+  background-color: #003399;
+  border: 2px solid #003399;
   cursor: pointer;
 }
-
-.to-do-app {
-  box-sizing: border-box;
-  width: 550px;
-  margin: 50px auto 0 auto;
-  text-align: center;
+.todoListMain .theList {
+  list-style: none;
+  padding-left: 0;
+  width: 250px;
+} 
+.todoListMain .theList li {
+  color: #333;
+  background-color: rgba(255,255,255,.5);
+  padding: 15px;
+  margin-bottom: 15px;
   border-radius: 5px;
-  box-shadow: 0 0 5px #252525;
-}
 
-.header {
-  background: #444;
-  padding: 7px;
-  border-radius: 3px 3px 0 0 ;
-  
-  h1 {
-    font-size: 36px;
-    margin: 0;
-    color: white;
-    font-weight: lighter;
-  }
+transition: background-color .2s ease-out;
 }
-
-.create-new {
-  border-top: 1px solid #777;
-  width: 100%;
-  input {
-    box-sizing: border-box;
-    width: 75%;
-    padding: 10px;
-    font-size: 18px;
-    border: none;
-  }
-  
-  button {
-    width: 25%;
-    background: #eee;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 18px;
-    margin: 0;
-    border: none;
-    border-left: 1px solid #999;
-    &:hover {
-      background: #ddd;
-    }
-  }
-}
-
-.items-list {
-  background: #138796;
-  border-radius: 3px;
-}
-
-.to-do-item {
-  padding: 10px 0 10px 0;
-  margin: 1px 0 1px 0;
-  border-top: 1px solid darken(#138796, 20%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  color: white;
-  font-weight: lighter;
-}
-
-.name {
-  margin-left: 10px;
-  input {
-    width: 350px;
-    color: #333;
-    padding: 5px;
-    border: none;
-    border-radius: 1px;
-  }
-}
-
-.actions {
-  margin-right: 10px;
-  button {
-    padding: 7px;
-    border-radius: 2px;
-    border: none;
-    //background: #FFB923;
-    //background: #E5FF3D;
-    background: #333;
-    color: white;
-    font-weight: lighter;
-    //box-shadow: 0 0 5px darken(#138796, 12%);
-  }
+ 
+.todoListMain .theList li:hover {
+  background-color: pink;
+  cursor: pointer;
 }
