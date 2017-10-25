@@ -32,6 +32,7 @@ class Login extends Component {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
+        <h1>Login</h1><br />
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
@@ -58,7 +59,7 @@ class Login extends Component {
           text="Login"
           loadingText="Logging in…"          
         />*/}
-        <a className="btn btn-default btn-lg btn-block" href="/buyer" role="button">Login as Buyer</a>
+        <a className="btn btn-default btn-lg btn-block" href="/buyer" role="button">Login as Buyer</a><br />
         <a className="btn btn-default btn-lg btn-block" href="/realtor" role="button">Login as Realtor</a>
         </form>
       </div>

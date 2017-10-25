@@ -1,14 +1,31 @@
 .Buyer {
    color: white; 
 }
-body {
-    padding: 50px;
-    background-color: #66CCFF;
-    font-family: sans-serif;
-  }
+
   #container {
     display: flex;
     justify-content: center;
+    background-color: black;
+   
   }
   
+  .calendar {
+    position: absolute;
+    top: 80px;
+    right: -2;
+    width: 200px;
+    height: 100px;
+    background-color: black;
+   
+  }
+
+  .todo {
+    position: absolute;
+    top: 40px;
+    right: -2;
+    width: 200px;
+    height: 100px;
+   
+  }
+
   

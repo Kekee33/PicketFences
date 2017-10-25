@@ -1,18 +1,19 @@
 .header {
-  font-size: xx-large;
+  font-size: 38px;
   text-align: center;  
-  font-family: 'Kalam';
+  font-family: 'Lora';
   font-weight: bold;
-  color: white;
+  color: rgb(241, 12, 146);
+  padding-bottom: 70px;
 }
 
 .welcome {
   background-color: #0B0B0C;
-  opacity: 0.8;
-  font-size: 14px;
+  opacity: .9;
+  font-size: 20px;
   padding: 80px;
   color: #FAF5F5;
-  font-family: 'Merienda';
+  font-family: 'Hind Madurai';
 }
 
 .Home .lander {

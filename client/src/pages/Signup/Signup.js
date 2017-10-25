@@ -105,6 +105,7 @@ class Signup extends Component {
           ? this.renderForm()
         : this.renderConfirmationForm()*/}
         <form onSubmit={this.handleSubmit}>
+        <h1>Sign Up</h1>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
