@@ -7,3 +7,11 @@ form.search {
     float: right;
     margin-top: 10px;
   }
+
+  .jumbotron {
+    background: url("http://www.savannahroofingexperts.com/wp-content/uploads/2014/02/bigstock-Savannah-Georgia-USA-downtow-80153564-e1444061236810.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover ;
+  }

@@ -5,7 +5,7 @@ import Calendar from "../../components/Calendar";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
 import Container from "../../components/Container";
-
+import SearchForm from "../../components/SearchForm";
 
 
 class Realtor extends Component {
@@ -25,6 +25,14 @@ class Realtor extends Component {
               <div className="calendar">
                 <h1>To Do's</h1>
                 <TodoList />
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-6">
+              <div className="homeSearch">
+                <h1>Home Search</h1>
+                <SearchForm />
               </div>
             </Col>
           </Row>

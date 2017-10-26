@@ -4,49 +4,24 @@ import "./SearchForm.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 const SearchForm = props =>
 <div>
-    <form className="search">
-        <div className="form-group">
-            <label htmlFor="address">Address:</label>
-            <input
-                value={props.search}
-                onChange={props.handleInputChange}
-                name="street"
-                list="address"
-                type="text"
-                className="form-control"
-                placeholder="Type an addres to begin"
-                id="address"
-            />
-            <datalist id="addresses">
-                {props.addresses.map(address => <option value={address} key={address} />)}
-            </datalist>
-        </div>
-    </form>;
-<form className="price">
-    <div className="form-group">
-        <label htmlFor="priceRange">Price:</label>
-        <input
-            value={props.search}
-            onChange={props.handleInputChange}
-            name="price"
-            list="priceRange"
-            type="text"
-            className="form-control"
-            placeholder="Type in your price range"
-            id="price"
-        />
-        <datalist id="priceRange">
-            {props.priceRange.map(price => <option value={price} key={price} />)}
-        </datalist>
-        <button
-            type="submit"
-            onClick={props.handleFormSubmit}
-            className="btn btn-success"
-        >
-            Search
-    </button>
-    </div>
-</form>;
+<div className="jumbotron">
+<form>
+  <div className="form-group">
+    <label for="exampleInputAddress"></label>
+    <input type="text" class="form-control" id="exampleInputAddress" placeholder="property address" />
+  </div>
+  <div className="form-group">
+    <label for="exampleInputPrice"></label>
+    <input type="text" class="form-control" id="exampleInputPrice" placeholder="list price" />
+  </div>
+  <div className="form-group">
+    <label for="exampleInputZipcode"></label>
+    <input type="text" class="form-control" id="exampleInputZipcode" placeholder="zip code" />
+  </div>  
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
 </div>
 
 export default SearchForm;

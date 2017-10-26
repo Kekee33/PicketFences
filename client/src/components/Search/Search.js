@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import API from "../utils/API";
+//import API from "../utils/API";
 import Container from "../components/Container";
-import SearchForm from "../components/SearchForm";
+//import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults";
 import Request from "superagent";
 
 
-class Search extends Component {
+class Search extends Component () {
    
-    constructor(){
-        super();
-        this.state = {};
-    }
+        constructor() {
+            super();
+            this.state = {};    
+      }
 
   // When the component mounts, get a list of all available base breeds and update this.state.breeds
   componentWillMount() {
@@ -39,24 +39,28 @@ class Search extends Component {
 //       .catch(err => this.setState({ error: err.message }));
 //   };
   render() {
-    return (
-      <Container style={{ minHeight: "80%" }}>
-        <h1 className="text-center">Search Homes!</h1>
-        <Alert
-          type="danger"
-          style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
-        >
-          {this.state.error}
-        </Alert>
-        <SearchForm
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          breeds={this.state.breeds}
-        />
-        <SearchResults results={this.state.results} />
-      </Container>
-    );
-  }
-}
+    return <div>
+        <input ref="textBox" type="text" />
+        </div>
 
+
+    //   <Container style={{ minHeight: "80%" }}>
+    //     <h1 className="text-center">Search Homes!</h1>
+    //     <Alert
+    //       type="danger"
+    //       style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
+    //     >
+    //       {this.state.error}
+    //     </Alert>
+    //     <SearchForm
+    //       handleFormSubmit={this.handleFormSubmit}
+    //       handleInputChange={this.handleInputChange}
+    //       breeds={this.state.breeds}
+    //     />
+    //     <SearchResults results={this.state.results} />
+    //   </Container>
+
+  }
+
+}
 export default Search;

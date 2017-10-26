@@ -1,0 +1,43 @@
+.Buyer {
+    color: white; 
+ }
+ 
+   #container {
+     display: flex;
+     justify-content: center;
+     background-color: black;
+    
+   }
+   
+   .calendar {
+     position: absolute;
+     top: -15px;    
+     width: 200px;
+     height: 100px;    
+     margin-left: 70%;
+    
+   }
+ 
+   .todo {
+     position: absolute;
+     top: 400px;   
+     width: 200px;
+     height: 100px;
+     margin-left: -45%; 
+    
+   }
+ 
+   .homeSearch {
+    background-color: black;
+    width: 600px;
+    height: 300px;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 500px;
+    top: -455px;
+     
+     
+   }
+ 
+   
