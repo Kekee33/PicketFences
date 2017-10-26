@@ -40,4 +40,15 @@
     
   }
 
+   .buyerResources {
+    background-color: black;
+    width: 600px;
+    height: 300px;
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 500px;
+    top: -355px;
+   }
+
   

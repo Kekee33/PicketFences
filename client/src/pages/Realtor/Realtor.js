@@ -14,17 +14,16 @@ class Realtor extends Component {
       <div>
         <Container style={{ marginTop: 30 }}>
           <Row>
-            <Col size="md-6">
+            <Col size="md-4">
               <div className="todo">
-                <Calendar />
+                <TodoList />
               </div>
             </Col>
           </Row>
           <Row>
-            <Col size="md-12">
+            <Col size="md-2">
               <div className="calendar">
-                <h1>To Do's</h1>
-                <TodoList />
+                <Calendar />
               </div>
             </Col>
           </Row>

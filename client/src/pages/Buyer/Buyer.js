@@ -6,6 +6,7 @@ import Row from "../../components/Row";
 import Col from "../../components/Col";
 import Container from "../../components/Container";
 import SearchForm from "../../components/SearchForm";
+import BuyerResources from "../../components/BuyerResources";
 //import SearchResults from "../../components/SearchResults";
 
 
@@ -33,6 +34,14 @@ class Buyer extends Component {
               <div className="homeSearch">
                 <h1>Home Search</h1>
                 <SearchForm />
+              </div>
+            </Col>
+          </Row>        
+        <Row>
+            <Col size="md-6">
+              <div className="buyerResources">
+                <h1>Buyer Resources</h1>
+                <BuyerResources />
               </div>
             </Col>
           </Row>
