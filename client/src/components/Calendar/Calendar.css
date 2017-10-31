@@ -21,18 +21,16 @@ body {
 }
 
 .calendar {
-  color: rgb(240, 227, 227);
-  float: left;
+  color: rgb(90, 116, 233);
   font-family: 'Lato', sans-serif;
   height: 430px;  
   margin-top: 25px;
-  position: relative;
-  transform: translateX(-50%);
-  width: 400px;
+  border: 1px solid rgb(90, 116, 233);
+  
 }
 
 .calendar-header {
-  background-color: black;
+  background-color: rgb(125, 205, 241);
   float: left;
   font-size: 18px;
   height: 50px;
@@ -109,7 +107,7 @@ body {
 }
 
 .weekday {
-  background-color: grey;
+  background-color: #ffffff;
   float: left;
   height: 40px;
   line-height: 2.5;
@@ -118,7 +116,7 @@ body {
 }
 
 .day {
-  background-color: grey;
+  background-color: #ffffff;
   box-sizing: border-box;
   float: left;
   font-weight: 300;

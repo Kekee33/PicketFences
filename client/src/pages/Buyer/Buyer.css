@@ -5,50 +5,41 @@
   #container {
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: rgb(163, 148, 148);
    
   }
-  
-  .calendar {
-    position: absolute;
-    top: -15px;    
-    width: 200px;
-    height: 100px;    
-    margin-left: 70%;
-   
-  }
-
-  .todo {
-    position: absolute;
-    top: 400px;   
-    width: 200px;
-    height: 100px;
-    margin-left: -45%; 
-   
+  .bg {
+    background-color: white;
   }
 
   .homeSearch {
    background-color: black;
-   width: 600px;
+   width: 500px;
    height: 300px;
    color: white;
    text-align: center;
-   position: relative;
-   left: 500px;
-   top: -455px;
     
     
   }
 
    .buyerResources {
-    background-color: black;
+     
     width: 600px;
     height: 300px;
     color: white;
     text-align: center;
-    position: relative;
-    left: 500px;
-    top: -355px;
    }
+
+   .realtorDropdown {
+     width: 165px;
+   }
+
+   .calendar {   
+    width: 300px;
+         
+     
+   }
+
+   
 
   

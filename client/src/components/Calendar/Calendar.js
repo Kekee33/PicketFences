@@ -188,11 +188,11 @@ class Calendar extends Component {
         <div className="calendar">
           <div className="calendar-header">
             <span className="button-container button-container--left">
-              <button onClick={this.previousCalendar} className="button-content button-content--left" />
+              <button onClick={this.previousCalendar} className="button-content button-content--left" > {'<'} </button>
             </span>
             <span className="calendar-header-date">{`${this.state.year} ${this.state.months[this.state.month]}`}</span>
             <span className="button-container button-container--right">
-              <button onClick={this.nextCalendar} className="button-content button-content--right" />
+              <button onClick={this.nextCalendar} className="button-content button-content--right"> {'>'} </button>
             </span>
           </div>
           <div className="week">

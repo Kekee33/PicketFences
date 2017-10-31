@@ -1,0 +1,21 @@
+.panel-heading {
+    width: 300px; 
+    text-align: center;   
+}
+
+.panel-body {
+    width: 300px; 
+    text-align: center;    
+}
+
+.panel-sucess {
+    width: 400px;
+}
+
+.well {
+    width: 400px;
+}
+
+.rates {
+    position: absolute;
+}

@@ -1,7 +1,7 @@
 .todoListMain .header input {
   padding: 10px;
   font-size: 16px;
-  border: 2px solid #FFF;
+  border: 2px solid rgb(67, 67, 212);
   width: 165px;
 }
 .todoListMain .header button {
@@ -22,6 +22,7 @@
   list-style: none;
   padding-left: 0;
   width: 250px;
+  
 } 
 .todoListMain .theList li {
   color: #333;
@@ -34,6 +35,6 @@ transition: background-color .2s ease-out;
 }
  
 .todoListMain .theList li:hover {
-  background-color: pink;
+  background-color: rgb(233, 27, 13);
   cursor: pointer;
 }

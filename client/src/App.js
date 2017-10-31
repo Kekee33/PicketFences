@@ -4,7 +4,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import "./App.css";
 import Routes from "./Routes";
 import RouteNavItem from "./components/RouteNavItem";
-
+//import Search from "./components/Search/Search"
 
 
 
@@ -23,10 +23,10 @@ class App extends Component {
           <Nav pullRight>
           <RouteNavItem href="/login">Login</RouteNavItem>
           <RouteNavItem href="/signup">Signup</RouteNavItem>          
+          <RouteNavItem href="/">Logout</RouteNavItem>
           </Nav>
         </Navbar.Collapse>
         </Navbar>
-       
         <Routes />
       </div>
     );

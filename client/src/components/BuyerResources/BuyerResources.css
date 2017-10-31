@@ -1,10 +1,19 @@
-.articles {
-    background-color: black;   
-    padding: 100px;
-          
+.panel {
+    margin-top: 50px;
+     
+           
 }
 
-.panel {
-    margin-top: 100px;
-    color: black;
+.buyerResources {
+    height: 600px;
+    width: 300px;
 }
+
+.well {
+    width: 300px;
+    background-color: white;
+    margin-top: -50px;
+}
+
+
+

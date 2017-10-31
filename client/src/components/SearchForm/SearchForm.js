@@ -7,19 +7,16 @@ const SearchForm = props =>
 <div className="jumbotron">
 <form>
   <div className="form-group">
-    <label for="exampleInputAddress"></label>
-    <input type="text" class="form-control" id="exampleInputAddress" placeholder="property address" />
+    <input type="text" className="form-control" id="exampleInputAddress" placeholder="property address" />
   </div>
   <div className="form-group">
-    <label for="exampleInputPrice"></label>
-    <input type="text" class="form-control" id="exampleInputPrice" placeholder="list price" />
+    <input type="text" className="form-control" id="exampleInputPrice" placeholder="list price" />
   </div>
   <div className="form-group">
-    <label for="exampleInputZipcode"></label>
-    <input type="text" class="form-control" id="exampleInputZipcode" placeholder="zip code" />
+    <input type="text" className="form-control" id="exampleInputZipcode" placeholder="zip code" />
   </div>  
   
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" className="btn btn-default">Submit</button>
 </form>
 </div>
 </div>

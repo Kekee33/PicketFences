@@ -12,7 +12,8 @@ class TodoList extends Component {
     super(props, context);
 
     this.state = {
-      items: []
+      items: [],
+      inputVal: ''
     };
 
     this.addItem = this.addItem.bind(this);
@@ -52,6 +53,12 @@ class TodoList extends Component {
     });
   }
 
+  handleChange = (e) => {
+    //let val = e.target.value;
+    this.setState({
+      inputVal: e.target.value
+    })
+  }
   render() {
 
     return (
@@ -59,12 +66,13 @@ class TodoList extends Component {
         <Container style={{ marginTop: 30 }}>
           <Row>
             <Col size="md-6">
-              <div className="todoListMain">
+              <div className="todoListMain body">
                 <div className="header">
                   <form onSubmit={this.addItem}>
-                    <input ref={(a) => this._inputElement = a}
-                      input placeholder="enter task">
-                    </input>
+                    <input ref={(a) => this._inputElement = a} 
+                      placeholder="enter task" >
+                     </input>
+                    {/* <input type='text' value={this.state.inputVal} onChange={this.handleChange} placeholder='enter task' /> */}
                     <button type="submit">add</button>
                   </form>
                 </div>
