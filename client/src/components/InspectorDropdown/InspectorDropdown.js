@@ -13,7 +13,7 @@ class InspectorDropdown extends Component {
         return (
             <div>
                 <div className="panel inspector" >
-                <h4>Choose Your Realtor</h4>
+                <h5>Choose Your Inspector</h5>
                         <select value={this.state.val} onChange={this.handleChange}>
                             <option value="Choose your Inspector"><a>Choose Your Inspector</a></option>
                             <option value="Don McDonald"><a>Don McDonald</a></option>

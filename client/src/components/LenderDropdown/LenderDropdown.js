@@ -13,9 +13,9 @@ class LenderDropdown extends Component {
         return (
             <div>
                 <div className="panel lender" >
-                <h4>Choose Your Lender</h4>
+                <h5>Choose Your Lender</h5>
                         <select value={this.state.val} onChange={this.handleChange}>
-                            <option value="Choose your Inspector"><a>Choose Your Lender</a></option>
+                            <option value="Choose your Lender"><a>Choose Your Lender</a></option>
                             <option value="Valerie Donald"><a>Valerie Donald</a></option>
                             <option value="Susanne Browne"><a>Susanne Browne</a></option>
                             <option value="Wesley Harold"><a>Wesley Harold</a></option>

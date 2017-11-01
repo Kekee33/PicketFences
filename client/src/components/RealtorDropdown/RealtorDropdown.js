@@ -13,7 +13,7 @@ class RealtorDropdown extends Component {
         return (
             <div>
                 <div className="panel realtors" >
-                <h4>Choose Your Realtor</h4>
+                <h5>Choose Your Realtor</h5>
                         <select value={this.state.val} onChange={this.handleChange}>                            
                             <option value="Choose your Realtor"><a>Choose Your Realtor</a></option>
                             <option value="John Smith"><a>John Smith</a></option>

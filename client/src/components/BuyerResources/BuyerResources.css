@@ -1,11 +1,11 @@
 .panel {
-    margin-top: 50px;
-     
-           
+    margin-top: 50px;           
 }
-
+.panel-body {
+    background: white;
+}
 .buyerResources {
-    height: 600px;
+    height: 300px;
     width: 250px;
 }
 
@@ -16,13 +16,15 @@
 }
 
 .articles {
-    padding-top: 20px;
+    padding-top: 0px;
     text-align: center;
 }
 
 div.well.articles {
     margin-top: 10px;
+    width:350px;
 }
+
 
 
 

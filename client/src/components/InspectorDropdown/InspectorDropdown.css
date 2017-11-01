@@ -1,13 +1,16 @@
-h4 {
+h5 {
     padding-bottom: 40px; 
     margin-top: 0 auto;
+    color: white;
+    
    }
   
   div.inspectorDropdown {
-      background-color: rgb(105, 98, 98);
+      background-color: black;
+      opacity: .8;
   }
   
   div.panel.inspector {
-      background-color: rgb(105, 98, 98);
-     
+      background-color: black;  
+      opacity: .8;
   }

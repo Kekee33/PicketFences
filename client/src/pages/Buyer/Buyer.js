@@ -7,11 +7,11 @@ import Col from "../../components/Col";
 import Container from "../../components/Container";
 import SearchForm from "../../components/SearchForm";
 import BuyerResources from "../../components/BuyerResources";
-//import SearchResults from "../../components/SearchResults";
-//import Search from "../../components/Search/Search";
 import RealtorDropdown from "../../components/RealtorDropdown/RealtorDropdown";
 import InspectorDropdown from "../../components/InspectorDropdown/InspectorDropdown";
 import LenderDropdown from "../../components/LenderDropdown/LenderDropdown";
+
+
 
 class Buyer extends Component {
   render() {
@@ -26,29 +26,24 @@ class Buyer extends Component {
         <div className="lenderDropdown">
           <LenderDropdown />
         </div>
-        <div className="todo">
-        <h3>Enter Today's Tasks</h3>
-          <TodoList />
-        </div>
-        <div className="calendar">
-          <Calendar />
-        </div>
         <div className="homeSearch">
           <h1>Home Search</h1>
           <SearchForm />
         </div>
+        <div className="calendar">
+          <Calendar />
+        </div>
+        <div className="todo">
+          <h3>Enter Today's Tasks</h3>
+          <TodoList />
+        </div>
+
         <div className="buyerResources">
-          <h1>Buyer Resources</h1>
+          
           <BuyerResources />
         </div>
       </div>
-
-
-
-
-
-
-
+      
     );
   }
 }

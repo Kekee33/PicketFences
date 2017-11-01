@@ -1,6 +1,7 @@
 .panel-heading {
     width: 300px; 
-    text-align: center;   
+    text-align: center;
+    padding-top:20px; 
 }
 
 .panel-body {

@@ -24,9 +24,8 @@ body {
   color: rgb(90, 116, 233);
   font-family: 'Lato', sans-serif;
   height: 430px;  
-  margin-top: 25px;
-  border: 1px solid rgb(90, 116, 233);
-  
+  margin-top: 5px;
+  width: 350px;  
 }
 
 .calendar-header {
