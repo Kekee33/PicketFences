@@ -10,51 +10,43 @@ import BuyerResources from "../../components/BuyerResources";
 //import SearchResults from "../../components/SearchResults";
 //import Search from "../../components/Search/Search";
 import RealtorDropdown from "../../components/RealtorDropdown/RealtorDropdown";
+import InspectorDropdown from "../../components/InspectorDropdown/InspectorDropdown";
+import LenderDropdown from "../../components/LenderDropdown/LenderDropdown";
 
 class Buyer extends Component {
   render() {
     return (
-      <div className="container bg">
-        <Container>
-    
-        <Row>
-             <Col size="md-6">
-               <div className="realtorDropdown">
-                 <RealtorDropdown />
-               </div>
-             </Col>
-        </Row>
-
-           <Row>
-             <Col size="md-6">
-               <div className="calendar">
-                 <Calendar />
-               </div>
-             </Col>
-             <Col size="md-6">
-               <div className="homeSearch">
-                 <h1>Home Search</h1>
-                  <SearchForm />
-               </div>
-             </Col>
-          
-           </Row>
-           <Row>
-            <Col size="md-6">
-              <div className="todo">
-                <TodoList />
-              </div>
-            </Col>
-            <Col size="md-6">
-               <div className="buyerResources">
-                 <h1>Buyer Resources</h1>
-                 <BuyerResources />                
-               </div>
-             </Col>
-           </Row>        
-  
-        </Container>
+      <div className="wrapper">
+        <div className="realtorDropdown">
+          <RealtorDropdown />
+        </div>
+        <div className="inspectorDropdown">
+          <InspectorDropdown />
+        </div>
+        <div className="lenderDropdown">
+          <LenderDropdown />
+        </div>
+        <div className="todo">
+        <h3>Enter Today's Tasks</h3>
+          <TodoList />
+        </div>
+        <div className="calendar">
+          <Calendar />
+        </div>
+        <div className="homeSearch">
+          <h1>Home Search</h1>
+          <SearchForm />
+        </div>
+        <div className="buyerResources">
+          <h1>Buyer Resources</h1>
+          <BuyerResources />
+        </div>
       </div>
+
+
+
+
+
 
 
     );

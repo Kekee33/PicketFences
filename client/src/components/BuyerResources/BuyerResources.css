@@ -6,13 +6,22 @@
 
 .buyerResources {
     height: 600px;
-    width: 300px;
+    width: 250px;
 }
 
 .well {
     width: 300px;
     background-color: white;
     margin-top: -50px;
+}
+
+.articles {
+    padding-top: 20px;
+    text-align: center;
+}
+
+div.well.articles {
+    margin-top: 10px;
 }
 
 

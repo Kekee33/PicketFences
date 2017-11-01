@@ -1,45 +1,29 @@
-.Buyer {
-   color: white; 
+.wrapper {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr 2fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1em;
 }
 
-  #container {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(163, 148, 148);
-   
-  }
-  .bg {
-    background-color: white;
-  }
+.wrapper > div {
+  background: #eee;
+  padding: 1em;
+}
 
-  .homeSearch {
-   background-color: black;
-   width: 500px;
-   height: 300px;
-   color: white;
-   text-align: center;
-    
-    
-  }
+.todo {
+  width: 500px;
+}
 
-   .buyerResources {
-     
-    width: 600px;
-    height: 300px;
-    color: white;
-    text-align: center;
-   }
+div.buyerResources {
+  width: 500px;
+}
 
-   .realtorDropdown {
-     width: 165px;
-   }
+div.well.articles {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-   .calendar {   
-    width: 300px;
-         
-     
-   }
 
-   
 
-  
+

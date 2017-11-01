@@ -2,24 +2,28 @@ import React, { Component } from "react";
 import "./RealtorDropdown.css";
 
 class RealtorDropdown extends Component {
+    state={
+        val: "Choose your Realtor"
+    }
+
+    handleChange = (event) => {
+        this.setState({val: event.target.value})
+    }
     render() {
         return (
             <div>
                 <div className="panel realtors" >
-                    <div className="dropdown">
-                        <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Choose your Realtor
-                                <span className="caret"></span>
-                        </button>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a>John Smith</a></li>
-                            <li><a>Jessica James</a></li>
-                            <li><a>Karen Johnson</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a>Separated link</a></li>
-                        </ul>
+                <h4>Choose Your Realtor</h4>
+                        <select value={this.state.val} onChange={this.handleChange}>                            
+                            <option value="Choose your Realtor"><a>Choose Your Realtor</a></option>
+                            <option value="John Smith"><a>John Smith</a></option>
+                            <option value="Jessica James"><a>Jessica James</a></option>
+                            <option value="Karen Johnson"><a>Karen Johnson</a></option>
+                            <option value="Dewayne Scott"><a>Dewayne Scott</a></option>
+                            <option value="Oliver Twist"><a>Oliver Twist</a></option>
+                            <option value="Joann Dan"><a>Joann Dan</a></option>
+                        </select>
                     </div>
-                </div>
             </div>
           
         );

@@ -21,13 +21,7 @@ class BuyerResources extends Component {
                     </div>
                     <div class="alert alert-info" role="alert">
                         <a href="https://www.realtor.com/videos/benefits-of-buying-a-home/5b86628b-b8a2-419d-87f0-331c392320c7" target="_blank" class="alert-link">Benefits of Buying a Home</a><br />
-                    </div>
-                    <div class="alert alert-info" role="alert">
-                        <a href="https://www.realtor.com/advice/finance/secured-unsecured-loans-know-difference/" target="_blank" class="alert-link">Unsecured vs. Seccured Loans, What's the Difference?</a><br />
-                    </div>
-                    <div class="alert alert-info" role="alert">
-                        <a href="https://www.realtor.com/videos/first-time-home-buyer-s-checklist/2aa83ea1-4e45-4ce4-9eef-6d182b5a138a" target="_blank" class="alert-link">First Time Home Buyer's Checklist</a><br />
-                    </div>
+                    </div>                    
                 </div>
                
             

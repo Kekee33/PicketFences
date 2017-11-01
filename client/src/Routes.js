@@ -13,4 +13,5 @@ export default () =>
     <Route path="/signup" exact component={Signup} />
     <Route path="/buyer" exact component={Buyer} />
     <Route path="/realtor" exact component={Realtor} />
+    
   </Switch>;
