@@ -10,7 +10,7 @@ import BuyerResources from "../../components/BuyerResources";
 import RealtorDropdown from "../../components/RealtorDropdown/RealtorDropdown";
 import InspectorDropdown from "../../components/InspectorDropdown/InspectorDropdown";
 import LenderDropdown from "../../components/LenderDropdown/LenderDropdown";
-
+import Email from "../../components/Email/Email";
 
 
 class Buyer extends Component {
@@ -30,6 +30,9 @@ class Buyer extends Component {
           <h1>Home Search</h1>
           <SearchForm />
         </div>
+        <div className="email">
+          <Email />
+          </div>
         <div className="calendar">
           <Calendar />
         </div>
