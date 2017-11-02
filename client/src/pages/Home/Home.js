@@ -22,9 +22,9 @@ const Home = () =>
         <p>
           Welcome to the Boardwalk, your one stop shop for all things Real Estate. From your personal page you will be 
           able to search for homes, schedule appointments and stay in contact with your REALTOR®! You will have access 
-          to resources that are designed to keep you informed every step of the way! We are here to answer all of your 
-          questions and if we can't, we will point you in the direction of someone who can!! Here at the Boardwalk, 
-          we will go the extra mile in helping you with the purchase of your new home.         
+          to resources that are designed to keep you informed every step of the way! We are here to walk you through the 
+          process and answer all of your questions. If we can't, we will point you in the direction of someone who can!! 
+          Here at the Boardwalk we will go the extra mile in helping you with the purchase of your new home.         
         </p>
         </div>
         </Col>

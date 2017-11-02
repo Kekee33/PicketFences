@@ -1,20 +1,20 @@
 
 
-.header {
-  font-size: 46px;
+.header h1 {
   text-align: center;  
   font-family: 'Lora';
-  font-weight: bold;
-  color: red;
+  font-weight: bold; 
+  font-size: 48px; 
   padding-bottom: 70px;
+  color: red;
 }
 
 .welcome {
-  background-color: #0B0B0C;
+  background-color: black;
   opacity: .9;
   font-size: 20px;
   padding: 80px;
-  color: #FAF5F5;
+  color: white;
   font-family: 'san-serif';
 }
 
